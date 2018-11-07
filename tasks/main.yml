@@ -1,0 +1,15 @@
+---
+- name: Fetch Psalm latest release version.
+  uri:
+    url: https://api.github.com/repos/vimeo/psalm/releases/latest
+    body_format: json
+    return_content: true
+  register: json_response
+
+- name: Install Psalm.
+  become: yes
+  get_url:
+    url: https://github.com/vimeo/psalm/releases/download/{{ json_response.json.tag_name }}/psalm.phar
+    dest: /usr/local/bin/psalm
+    mode: 0755
+    force: yes
