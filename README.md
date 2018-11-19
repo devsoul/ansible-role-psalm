@@ -1,5 +1,6 @@
 Psalm Ansible role
 =========
+[![Build Status](https://travis-ci.com/devsoul/ansible-role-psalm.svg?branch=master)](https://travis-ci.com/devsoul/ansible-role-psalm)
 
 If you are a PHP developer and you use Psalm.
 
